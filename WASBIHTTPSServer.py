@@ -46,6 +46,7 @@ class Notification:
     WARN = (f"{Bcolors.WARNING}[+] {Bcolors.RESET}")
     ERROR = (f"{Bcolors.FAIL}[-] {Bcolors.RESET}")
     R = [Bcolors.BLUE, Bcolors.WARNING, Bcolors.FAIL, Bcolors.OK, Bcolors.RESET ]
+    RESET = Bcolors.RESET
 
 def banner():
     ver = "ver 1.0"
@@ -421,7 +422,7 @@ class SimpleHTTPSRequestHandler(http.server.BaseHTTPRequestHandler):
 
 def __start__(options):
     banner()
-    reset = Notification.REST
+    reset = Notification.RESET
     print(f"{Notification.OK}{Notification.R[3]}Starting WEB Service.{reset}")
 
     if os.path.isfile("cert.pem"):
